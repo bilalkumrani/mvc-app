@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Updating</title>
+  </head>
+  <body>
+    <h1>Updating : <%=locals.name%></h1>
+    <form action="/update/<%=id%>" method="POST">
+      <input placeholder="Enter updated name" name="name" type="text" />
+      <button type="submit">update!</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+}
+
+#page-heading{
+    text-align: center;
+    margin-top: 25px;
+    color: grey;
+}
+
+.listItems{
+    background-color: rgb(0, 111, 202);
+    color: white;
+    margin: 5px;
+    width: 180px;     
+}
+.listItems:hover{
+    background-color: gray;
+}
+.list{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}

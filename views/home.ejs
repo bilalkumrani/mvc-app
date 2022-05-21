@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <h1 id="page-heading">
+      <i
+        class="fa-solid fa-envelope fa-bounce"
+        style="
+          --fa-bounce-start-scale-x: 1;
+          --fa-bounce-start-scale-y: 1;
+          --fa-bounce-jump-scale-x: 1;
+          --fa-bounce-jump-scale-y: 1;
+          --fa-bounce-land-scale-x: 1;
+          --fa-bounce-land-scale-y: 1;
+          --fa-bounce-rebound: 0;
+        "
+      ></i>
+      Contact List
+    </h1>
+    <div>
+      <ul class="list">
+        <% for(i of locals.contact_list){%>
+        <li class="listItems">
+          <%= i.name%> || <%= i.phone%>
+          <a
+            href="/deletecontact/?id=<%=i._id%>"
+            style="
+              float: right;
+              color: red;
+              text-decoration: none;
+              border: 1px solid white;
+              padding: 5px;
+              background-color: white;
+            "
+            >X</a
+          >
+
+          <a
+            href="/update/?id=<%=i._id%>&name=<%=i.name%>"
+            style="
+              float: right;
+              color: red;
+              text-decoration: none;
+              border: 1px solid white;
+              padding: 5px;
+              background-color: white;
+            "
+            >Edit</a
+          >
+        </li>
+        <%}%>
+      </ul>
+    </div>
+
+    <form method="POST" action="/createContact">
+      <input type="text" name="name" placeholder="Enter Name" required />
+      <input type="number" name="phone" placeholder="Enter Phone" required />
+      <button type="submit">add contact</button>
+    </form>
+    <script type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>
